@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.springboot.Service.CustomerService;
 import com.example.springboot.entities.customer;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {

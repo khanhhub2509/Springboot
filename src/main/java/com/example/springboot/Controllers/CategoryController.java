@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.springboot.Service.CategoryService;
 import com.example.springboot.entities.category;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/categories")
 public class CategoryController {

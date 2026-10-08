@@ -3,6 +3,7 @@ package com.example.springboot.Service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.springboot.Repositories.AdminRepository;
@@ -13,6 +14,9 @@ public class AdminService {
     //Đối tượng giúp làm việc với DB
     @Autowired
     public AdminRepository adminRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     //Phương thức lấy tất cả bản ghi
     public List<admin> getAllAdmin() {
         return adminRepository.findAll();
@@ -25,6 +29,7 @@ public class AdminService {
 
     //Phương thức lưu dữ liệu
     public admin createAdmin(admin admin) {
+        admin.setPassword(passwordEncoder.encode(admin.getPassword()));
         return adminRepository.save(admin);
     }
 

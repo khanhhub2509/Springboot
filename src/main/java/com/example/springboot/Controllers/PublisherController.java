@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.springboot.Service.PublisherService;
 import com.example.springboot.entities.publisher;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/publishers")
 public class PublisherController {

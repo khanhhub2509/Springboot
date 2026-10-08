@@ -3,7 +3,9 @@ package com.example.springboot.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 //Định nghĩa một admin là 1 entity tương ứng với bảng trong db
@@ -24,7 +26,8 @@ public class admin {
     private String email;
 
     //Attr password tương ứng với cột password trong db
-    @Column(columnDefinition = "VARCHAR(50)")
+    @Column(columnDefinition = "VARCHAR(255)")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     //Attr phone tương ứng với cột phone trong db

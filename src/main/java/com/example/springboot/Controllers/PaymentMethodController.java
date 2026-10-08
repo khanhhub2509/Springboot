@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.springboot.Service.PaymentMethodService;
 import com.example.springboot.entities.payment_method;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/payment-methods")
 public class PaymentMethodController {

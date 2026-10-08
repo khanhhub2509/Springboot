@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.springboot.Service.AuthorService;
 import com.example.springboot.entities.author;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/authors")
 public class AuthorController {
