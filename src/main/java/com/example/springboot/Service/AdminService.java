@@ -37,6 +37,11 @@ public class AdminService {
     public admin updateAdmin(Long id, admin admin) {
         admin existingAdmin = getAdminById(id);
         existingAdmin.setFullName(admin.getFullName());
+        existingAdmin.setEmail(admin.getEmail());
+        if (admin.getPassword() != null && !admin.getPassword().isBlank()) {
+            existingAdmin.setPassword(passwordEncoder.encode(admin.getPassword()));
+        }
+        existingAdmin.setPhone(admin.getPhone());
         return adminRepository.save(existingAdmin);
     }
 
